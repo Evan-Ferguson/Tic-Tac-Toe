@@ -21,46 +21,11 @@ headerHeight = height*1/8;
   rect(xX, xY, xWidth, xHeight);
   
   float xScrX, xScrY, xScrWidth, xScrHeight;
-  xScrX = width*3/8;
+  xScrX = width*4/8;
   xScrY = height*1/8;
   xScrWidth = width*1/8;
   xScrHeight = height*1/8;
   rect(xScrX, xScrY, xScrWidth, xScrHeight);
-  
-    float yX, yY, yWidth, yHeight;
-  yX = width*4/8;
-  yY = height*1/8;
-  yWidth = width*1/8;
-  yHeight = height*1/8;
-  rect(yX, yY, yWidth, yHeight);
-  
-  float yScrX, yScrY, yScrWidth, yScrHeight;
-  yScrX = width*5/8;
-  yScrY = height*1/8;
-  yScrWidth = width*1/8;
-  yScrHeight = height*1/8;
-  rect(yScrX, yScrY, yScrWidth, yScrHeight);
-  
-  float easyX, easyY, easyWidth, easyHeight;
-  easyX = width*6/8;
-  easyY = height*1/8;
-  easyWidth = width*2/8;
-  easyHeight = height*1/24;
-  rect(easyX, easyY, easyWidth, easyHeight);
-  
-  float mediumX, mediumY, mediumWidth, mediumHeight;
-  mediumX = width*6/8;
-  mediumY = height*4/24;
-  mediumWidth = width*2/8;
-  mediumHeight = height*1/24;
-  rect(mediumX, mediumY, mediumWidth, mediumHeight);
-  
-  float hardX, hardY, hardWidth, hardHeight;
-  hardX = width*6/8;
-  hardY = height*5/24;
-  hardWidth = width*2/8;
-  hardHeight = height*1/24;
-  rect(hardX, hardY, hardWidth, hardHeight);
   
  float boardX, boardY, boardWidth, boardHeight;
  boardX =width*0;
