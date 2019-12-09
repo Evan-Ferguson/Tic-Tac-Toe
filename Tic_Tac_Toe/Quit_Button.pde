@@ -1,5 +1,6 @@
 
 PFont quitButtonFont;
+color background = #5574ff;
 color ink = #ffa455;
 color color1 = #5574ff;//blue
 color color2 = #ffa455;//orange
@@ -8,11 +9,10 @@ void quitButtonRect() {
   rect(width*19/20, height*0, width*1/20, height*1/20);
 }
 void quitButtonSetup() {
-  quitButtonFont = createFont ("Harrington", 55); //Must also Tools / Create Font / Find Font / Do Not Press "OK"
   quitButtonRect(); //Quit Button
 }
 
-void quitButtonDraw() {
+void ButtonDraw() {
   //HoverOver
   if (mouseX >= width*19/20  && mouseX <= width && mouseY >= height*0 && mouseY <= height*1/20) {
     ink = color1;
@@ -28,7 +28,7 @@ void quitButtonDraw() {
   fill(ink); //Ink, hexidecimal copied from Color Selector
   textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
-  textFont(quitButtonFont, 20); //Change the number until it fits, largest font size
+  textFont(Font, 20); //Change the number until it fits, largest font size
   text(quit, width*19/20, height*0, width*1/20, height*1/20);
   fill(255); //Reset to white for rest of the program
 }
