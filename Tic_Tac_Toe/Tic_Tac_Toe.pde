@@ -10,6 +10,9 @@ void setup(){
 void draw(){
   quitButtonDraw();
   resetButtonDraw();
+  easyButtonDraw();
+  mediumButtonDraw();
+  hardButtonDraw();
 }
 
 void keyPressed(){
@@ -18,5 +21,4 @@ void keyPressed(){
 
 void mousePressed(){
   quitButtonMouseClicked();
-  resetButtonMouseClicked();
 }

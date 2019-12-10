@@ -6,12 +6,7 @@ void GUI_Setup(){
   headerHeight = height*1/8;
   rect(headerX, headerY, headerWidth, headerHeight);
   
-  float resetX, resetY, resetWidth,resetHeight;
-  resetX = width*0;
-  resetY = height*1/8;
-  resetWidth = width*1/4;
-  resetHeight = height*1/8;
-  rect(resetX, resetY, resetWidth,resetHeight);
+
   
   float xX, xY, xWidth, xHeight;
   xX = width*1/4;
@@ -41,27 +36,6 @@ void GUI_Setup(){
   yScrHeight = height*1/8;
   rect(yScrX, yScrY, yScrWidth, yScrHeight);
   
-  float easyX, easyY, easyWidth, easyHeight;
-  easyX = width*6/8;
-  easyY = height*1/8;
-  easyWidth = width*2/8;
-  easyHeight = height*1/24;
-  rect(easyX, easyY, easyWidth, easyHeight);
-  
-  float mediumX, mediumY, mediumWidth, mediumHeight;
-  mediumX = width*6/8;
-  mediumY = height*4/24;
-  mediumWidth = width*2/8;
-  mediumHeight = height*1/24;
-  rect(mediumX, mediumY, mediumWidth, mediumHeight);
-  
-  float hardX, hardY, hardWidth, hardHeight;
-  hardX = width*6/8;
-  hardY = height*5/24;
-  hardWidth = width*2/8;
-  hardHeight = height*1/24;
-  rect(hardX, hardY, hardWidth, hardHeight);
- 
  float spaceWidth, spaceHeight;
  spaceWidth = width*1/3;
  spaceHeight = height*2/8;
