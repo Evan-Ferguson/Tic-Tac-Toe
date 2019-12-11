@@ -1,0 +1,25 @@
+AI == O
+easy:Make three
+medium:1-you   :   AI
+	 corner:never center
+	 center:side
+	 side:never center
+	2-if you can make three do so/make three
+	3-if opponent can make three prevent it
+impossible:turn 1-	you   :  AI
+			center:corner
+			corner:center
+			side:corner beside
+		2-if opponent can make three prevent it
+		3-prevent double threat
+		4-make three
+
+
+
+TO DO:
+playing board
+score board
+reset button
+quit button %65
+dark mode 70%
+options 70%up
