@@ -1,5 +1,5 @@
 AI == O
-easy:Make three
+easy:Make three/random
 medium:1-you   :   AI
 	 corner:never center
 	 center:side
@@ -25,5 +25,9 @@ dark mode 70%
 options 70%up
 
 Procedure: 
-on click draw X/O (alternates)
+on click draw X/O (alternates)(cant click same box)
 recognizes a win and celebrates
+	-update score board
+	-activate reset button(only after win)
+advanced: Quit and save game state and score board
+	-writing/reading .txt file
