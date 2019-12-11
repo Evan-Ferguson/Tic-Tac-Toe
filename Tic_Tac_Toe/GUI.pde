@@ -1,13 +1,5 @@
 void GUI_Setup(){
-  float headerX, headerY, headerWidth, headerHeight;
-  headerX = width*0;
-  headerY = height*0;
-  headerWidth = width;
-  headerHeight = height*1/8;
-  rect(headerX, headerY, headerWidth, headerHeight);
-  
 
-  
   float xX, xY, xWidth, xHeight;
   xX = width*1/4;
   xY = height*1/8;

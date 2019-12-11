@@ -23,3 +23,7 @@ reset button
 quit button %65
 dark mode 70%
 options 70%up
+
+Procedure: 
+on click draw X/O (alternates)
+recognizes a win and celebrates

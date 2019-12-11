@@ -1,7 +1,10 @@
 //Global Variable
 PFont Font;
 String quit = "X";
-String reset = "Reset";
+String X = "X";
+String Y = "Y";
+String Xscr = "0";
+String yscr = "0";
 
 void textSetup() {
   Font = createFont ("Harrington", height); 
