@@ -26,6 +26,7 @@ void keyPressed(){
 }
 
 void mousePressed(){
+  Click_XO();
   quitButtonMouseClicked();
   darkButtonMouseClicked();
   resetButtonMouseClicked();

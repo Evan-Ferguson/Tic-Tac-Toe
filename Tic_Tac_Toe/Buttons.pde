@@ -55,8 +55,8 @@ void quitButtonDraw() {
   ink = color2;
   }
   
-  String Mode = "player/player";
-  String mode1 = "player/player", mode2 = "player/AI";
+  String Mode = "player mode";
+  String mode1 = "two-player", mode2 = "one-player";
     void modeButtonDraw() {
     String string = Mode;
   //HoverOver
@@ -210,6 +210,6 @@ void resetButtonMouseClicked() {
 void modeButtonMouseClicked() {
   if (mouseX >= width*0  && mouseX <= width*1/2 && mouseY >= height*1/16 && mouseY <= height*2/16) {
   Mode = mode2; mode2 = mode1; mode1 = Mode;
-  
+
   }
 }
