@@ -18,6 +18,7 @@ void draw(){
   mediumButtonDraw();
   hardButtonDraw();
   DarkButtonDraw();
+  modeButtonDraw();
 }
 
 void keyPressed(){
@@ -26,4 +27,7 @@ void keyPressed(){
 
 void mousePressed(){
   quitButtonMouseClicked();
+  darkButtonMouseClicked();
+  resetButtonMouseClicked();
+  modeButtonMouseClicked();
 }

@@ -1,4 +1,5 @@
 void GUI_Setup(){
+fill(color1);
 
   float xX, xY, xWidth, xHeight;
   xX = width*1/4;
