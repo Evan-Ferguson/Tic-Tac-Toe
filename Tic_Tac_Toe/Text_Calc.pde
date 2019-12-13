@@ -2,6 +2,7 @@
 PFont Font;
 String quit = "X";
 String X = "X";
+String O = "O";
 String Y = "Y";
 String Xscr = "0";
 String yscr = "0";
