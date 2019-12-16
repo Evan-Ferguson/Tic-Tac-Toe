@@ -4,12 +4,14 @@ void setup(){
   textSetup();
   ButtonSetup();
   GUI_Setup();
+  setUpReadArraysVariables();
  
 }
 
 void draw(){
   TextDraw();
  DrawButtons();
+   
 }
 
 void keyPressed(){
@@ -17,6 +19,8 @@ void keyPressed(){
 }
 
 void mousePressed(){
-  clickXO();
+    if (nomode == false){
+    if(twoPlayer == true || onePlayer == true){clickXO();
+  }}
   ButtonsClicked();
 }

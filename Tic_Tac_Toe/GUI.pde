@@ -1,3 +1,7 @@
+float[] spaceX = new float[9];
+float[] spaceY = new float[9];
+float spaceWidth, spaceHeight;
+
 void TextDraw(){
   textDraw(X, Font, height, ink, CENTER, CENTER, width*1/4, height*1/8, width*1/8, height*1/8);
   textDraw(Y, Font, height, ink, CENTER, CENTER, width*5/8, height*1/8, width*1/8, height*1/8);
@@ -7,6 +11,24 @@ void TextDraw(){
 
 void GUI_Setup(){
 fill(color1);
+ for (int i=0; i<spaceX.length; i=i+3) {
+    spaceX[i] = width * 0; //spaceX1 = spaceX4 = spaceX7 = width * 0;
+  }
+  for (int i=1; i<spaceX.length; i=i+3) {
+    spaceX[i] = width * 1/3; //spaceX2 = spaceX5 = spaceX8 = width * 1/3;
+  }
+  for (int i=2; i<spaceX.length; i=i+3) {
+    spaceX[i] = width * 2/3; //spaceX3 = spaceX6 = spaceX9 = width * 2/3;
+  }
+  for (int i=0; i<4; i++) {
+    spaceY[i] = height * 1/4; //spaceY1 = spaceY2 = spaceY3 = height * 1/4;
+  }
+  for (int i=3; i<6; i++) {
+    spaceY[i] = height * 1/4; //spaceY4 = spaceY5 = spaceY6 = height * 2/4;
+  }
+  for (int i=6; i<9; i++) {
+    spaceY[i] = height * 1/4; //spaceY7 = spaceY8 = spaceY9 = height * 3/4;
+  }
 
   float xX, xY, xWidth, xHeight;
   xX = width*1/4;
@@ -84,4 +106,6 @@ fill(color1);
  space9X = width*2/3;
  space9Y = height*6/8;
  rect(space9X, space9Y, spaceWidth, spaceHeight);
+ 
+
 }

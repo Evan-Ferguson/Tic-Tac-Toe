@@ -1,8 +1,9 @@
 //Global Variable
 PFont Font;
 String quit = "X";
+String x = "X";
+String o = "O";
 String X = "X";
-String O = "O";
 String Y = "Y";
 String Xscr = "0";
 String yscr = "0";
