@@ -7,9 +7,13 @@ String X = "X";
 String Y = "Y";
 String Xscr = "0";
 String yscr = "0";
+String AI = "AI:";
+String AImode = "none";
 
 void textSetup() {
-  Font = createFont ("Harrington", height); 
+ // String[] fontList = PFont.list();
+//printArray(fontList);
+  Font = createFont ("Sylfaen", height); //Sylfaen
 }
 
 void textDraw(String string, PFont font, float height, color ink, int alignHorizontal, int alignVertical, float rectX, float rectY, float rectWidth, float rectHeight) {
@@ -32,7 +36,7 @@ void textDraw(String string, PFont font, float height, color ink, int alignHoriz
 float textCalculator(float size, String string, float rectWidth) {
   textSize(size);
   while ( textWidth(string) > rectWidth ) {
-    size = size * 0.99;
+    size = size * 0.2;
     textSize(size);
   }
   return size;

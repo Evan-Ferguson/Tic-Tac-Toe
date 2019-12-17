@@ -11,6 +11,7 @@ void setup(){
 void draw(){
   TextDraw();
  DrawButtons();
+ twoPlayerKey();
    
 }
 
@@ -19,8 +20,6 @@ void keyPressed(){
 }
 
 void mousePressed(){
-    if (nomode == false){
-    if(twoPlayer == true || onePlayer == true){clickXO();
-  }}
+clickXO();
   ButtonsClicked();
 }

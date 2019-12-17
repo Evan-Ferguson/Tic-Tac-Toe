@@ -1,4 +1,4 @@
-boolean twoPlayer = false, onePlayer = false, nomode = true, easy=false, medium=false, impossible=false;
+boolean twoPlayer = false, onePlayer = false, nomode = true, easy=false, medium=false, hard=false;
 Boolean[] clickX = new Boolean[9];
 Boolean[] clickO = new Boolean[9];
 Boolean[] noDraw = new Boolean[9];

@@ -7,6 +7,8 @@ void TextDraw(){
   textDraw(Y, Font, height, ink, CENTER, CENTER, width*5/8, height*1/8, width*1/8, height*1/8);
   textDraw(Xscr, Font, height, ink, CENTER, CENTER, width*3/8, height*1/8, width*1/8, height*1/8);
   textDraw(yscr, Font, height, ink, CENTER, CENTER, width*4/8, height*1/8, width*1/8, height*1/8);
+  textDraw(AI, Font, height, ink, LEFT, CENTER, width*1/2, height*1/16, width*1/8, height*1/16);
+  textDraw(AImode, Font, height, ink, RIGHT, CENTER, width*1/2, height*1/16, width*1/4, height*1/16);
 }
 
 void GUI_Setup(){
@@ -29,6 +31,12 @@ fill(color1);
   for (int i=6; i<9; i++) {
     spaceY[i] = height * 1/4; //spaceY7 = spaceY8 = spaceY9 = height * 3/4;
   }
+  float AiModeX, AiModeY, AiModeHeight, AiModeWidth;
+  AiModeX = width*1/2;
+  AiModeY = height*1/16;
+  AiModeWidth = width*1/4;
+  AiModeHeight = height*1/16;
+  rect(AiModeX, AiModeY, AiModeWidth, AiModeHeight);
 
   float xX, xY, xWidth, xHeight;
   xX = width*1/4;
