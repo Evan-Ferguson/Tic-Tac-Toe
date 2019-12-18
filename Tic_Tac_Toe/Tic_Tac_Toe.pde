@@ -6,12 +6,13 @@ void setup(){
   GUI_Setup();
   setUpReadArraysVariables();
  
-}
+}//ADD LINES!!!!
 
 void draw(){
   TextDraw();
  DrawButtons();
  twoPlayerKey();
+ 
    
 }
 

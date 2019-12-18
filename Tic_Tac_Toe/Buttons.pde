@@ -203,7 +203,13 @@ void darkButtonMouseClicked() {
 
 void resetButtonMouseClicked() {
   if (mouseX >= width*0  && mouseX <= width*1/4 && mouseY >= height*1/8 && mouseY <= height*2/8) {
-  GUI_Setup();
+  clickX = new Boolean[9];
+  clickO = new Boolean[9];
+  noDraw = new Boolean[9];
+  setUpReadArraysVariables();
+GUI_Setup();
+winCheck();
+Run = true;
   }
 }
 
@@ -232,25 +238,37 @@ if(Mode == "one-player"){
 
 void easyButtonMouseClicked() {
   if (mouseX >=  width*6/8  && mouseX <= width && mouseY >= height*3/24 && mouseY <= height*4/24) {
+    if(Mode != "player mode"){
+    if(Mode != "two-player"){
   easy = true; medium = false; hard = false;
   AImode = "easy";
   GUI_Setup();
+  }
+  }
   }
 }
 
 void mediumButtonMouseClicked() {
   if (mouseX >=  width*6/8  && mouseX <= width && mouseY >= height*4/24 && mouseY <= height*5/24) {
+    if(Mode != "player mode"){
+    if(Mode != "two-player"){
   easy = false; medium = true; hard = false;
   AImode = "medium";
   GUI_Setup();
+  }
+  }
   }
 }
 
 void hardButtonMouseClicked() {
   if (mouseX >=  width*6/8  && mouseX <= width && mouseY >= height*5/24 && mouseY <= height*6/24) {
+    if(Mode != "player mode"){
+    if(Mode != "two-player"){
   easy = false; medium = false; hard = true;
   AImode = "hard";
   GUI_Setup();
+  }
+  }
   }
 }
 

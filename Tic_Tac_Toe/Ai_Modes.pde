@@ -7,23 +7,7 @@ void easy() {
 }
 
 void medium() {
-  Boolean win = false;
-  int AI_Turn = turn % 2;
-  Boolean firstAI_turn = true;
-  drawXO();
-  if (AI_Turn==1) {
-    if (firstAI_turn==true) {
-      randomChoice();
-      firstAI_turn = false;
-      println("First Turn", firstAI_turn);
-    }
-    if ( AI_Turn == 1 && firstAI_turn == false ) {
-     // blockWin();
-      println("Inside AI", firstAI_turn);
-    }
-  }
-  win = winCheck();
-  if (win == true) winDraw();
+
 }
 //println ("First Drawcounter", drawCounter);
 //println ("First AI_Turn", AI_Turn);

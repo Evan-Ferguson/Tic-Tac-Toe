@@ -2,6 +2,7 @@ float[] spaceX = new float[9];
 float[] spaceY = new float[9];
 float spaceWidth, spaceHeight;
 
+
 void TextDraw(){
   textDraw(X, Font, height, ink, CENTER, CENTER, width*1/4, height*1/8, width*1/8, height*1/8);
   textDraw(Y, Font, height, ink, CENTER, CENTER, width*5/8, height*1/8, width*1/8, height*1/8);
@@ -26,11 +27,14 @@ fill(color1);
     spaceY[i] = height * 1/4; //spaceY1 = spaceY2 = spaceY3 = height * 1/4;
   }
   for (int i=3; i<6; i++) {
-    spaceY[i] = height * 1/4; //spaceY4 = spaceY5 = spaceY6 = height * 2/4;
+    spaceY[i] = height * 2/4; //spaceY4 = spaceY5 = spaceY6 = height * 2/4;
   }
   for (int i=6; i<9; i++) {
-    spaceY[i] = height * 1/4; //spaceY7 = spaceY8 = spaceY9 = height * 3/4;
+    spaceY[i] = height * 3/4; //spaceY7 = spaceY8 = spaceY9 = height * 3/4;
   }
+ spaceWidth = width*1/3;
+ spaceHeight = height*2/8;
+ 
   float AiModeX, AiModeY, AiModeHeight, AiModeWidth;
   AiModeX = width*1/2;
   AiModeY = height*1/16;
@@ -65,10 +69,6 @@ fill(color1);
   yScrWidth = width*1/8;
   yScrHeight = height*1/8;
   rect(yScrX, yScrY, yScrWidth, yScrHeight);
-  
- float spaceWidth, spaceHeight;
- spaceWidth = width*1/3;
- spaceHeight = height*2/8;
  
  float space1X, space1Y;
  space1X = width*0;
