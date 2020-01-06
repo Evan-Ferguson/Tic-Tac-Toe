@@ -1,44 +1,62 @@
-Boolean winCheck() {
-  Boolean win = false;
+Boolean winCheckX() {
+  Boolean winX = false;
   // i=0,3,6; j=1
   for (int i=0; i<7; i=i+3) {
     int j = 1;
-    if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) win = true;
-    if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) win = true;
+    if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) winX = true;
   }
   //i=0,1,2; j=3
   for (int i=0; i<3; i++) {
     int j = 3;
-    if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) win = true;
-    if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) win = true;
+    if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) winX = true;
   }
   // i=0; j=4
   int i = 0;
   int j = 4;
-  if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) win = true;
-  if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) win = true;
+  if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) winX = true;
   //
   // i=2; j=2
   i = 2;
   j = 2;
-  if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) win = true;
-  if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) win = true;
+  if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) winX = true;
+
+  return winX;
+
+}
+Boolean winCheckO() {
+  Boolean winO = false;
+  // i=0,3,6; j=1
+  for (int i=0; i<7; i=i+3) {
+    int j = 1;
+    if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) winO = true;
+  }
+  //i=0,1,2; j=3
+  for (int i=0; i<3; i++) {
+    int j = 3;
+    if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) winO = true;
+  }
+  // i=0; j=4
+  int i = 0;
+  int j = 4;
+  if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) winO = true;
   //
-  /*Should be X and O
-  if (clickX[0]==true && clickX[1]==true && clickX[2] ) win = true;
-  if (clickX[3]==true && clickX[4]==true && clickX[5] ) win = true;
-  if (clickX[6]==true && clickX[7]==true && clickX[8] ) win = true;
-  if (clickX[0]==true && clickX[3]==true && clickX[6] ) win = true;
-  if (clickX[1]==true && clickX[4]==true && clickX[7] ) win = true;
-  if (clickX[2]==true && clickX[5]==true && clickX[8] ) win = true;
-  if (clickX[0]==true && clickX[4]==true && clickX[8] ) win = true;
-  if (clickX[2]==true && clickX[4]==true && clickX[6] ) win = true;
-  */
-  return win;
+  // i=2; j=2
+  i = 2;
+  j = 2;
+  if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) winO = true;
+
+  return winO;
+  
 }
 
-void winDraw() {
-  println("You win.");
+void winDrawX() {
+  println("X wins.");
+Run = false;
+  //reset=true; //Must restart game here
+}
+
+void winDrawO() {
+  println("O wins.");
 Run = false;
   //reset=true; //Must restart game here
 }
