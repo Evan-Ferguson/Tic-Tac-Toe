@@ -51,12 +51,18 @@ Boolean winCheckO() {
 
 void winDrawX() {
   println("X wins.");
+  Xscr = Xscr + 1;
+  textDraw(xscr, Font, height, ink, CENTER, CENTER, width*3/8, height*1/8, width*1/8, height*1/8);
+  
+  
 Run = false;
   //reset=true; //Must restart game here
 }
 
 void winDrawO() {
   println("O wins.");
+  Oscr = Oscr + 1;
+
 Run = false;
   //reset=true; //Must restart game here
 }

@@ -3,10 +3,12 @@ PFont Font;
 String quit = "X";
 String x = "X";
 String o = "O";
-String X = "X";
-String Y = "Y";
-String Xscr = "0";
-String yscr = "0";
+String X = "X:";
+String O = ":O";
+int Xscr;
+int Oscr;
+String xscr = str(Xscr);
+String oscr = str(Oscr);
 String AI = "AI:";
 String AImode = "none";
 

@@ -1,13 +1,14 @@
 float[] spaceX = new float[9];
 float[] spaceY = new float[9];
 float spaceWidth, spaceHeight;
-
+float yScrX, yScrY, yScrWidth, yScrHeight;
+float xScrX, xScrY, xScrWidth, xScrHeight;
 
 void TextDraw(){
   textDraw(X, Font, height, ink, CENTER, CENTER, width*1/4, height*1/8, width*1/8, height*1/8);
-  textDraw(Y, Font, height, ink, CENTER, CENTER, width*5/8, height*1/8, width*1/8, height*1/8);
-  textDraw(Xscr, Font, height, ink, CENTER, CENTER, width*3/8, height*1/8, width*1/8, height*1/8);
-  textDraw(yscr, Font, height, ink, CENTER, CENTER, width*4/8, height*1/8, width*1/8, height*1/8);
+  textDraw(O, Font, height, ink, CENTER, CENTER, width*5/8, height*1/8, width*1/8, height*1/8);
+  textDraw(xscr, Font, height, ink, CENTER, CENTER, width*3/8, height*1/8, width*1/8, height*1/8);
+  textDraw(oscr, Font, height, ink, CENTER, CENTER, width*4/8, height*1/8, width*1/8, height*1/8);
   textDraw(AI, Font, height, ink, LEFT, CENTER, width*1/2, height*1/16, width*1/8, height*1/16);
   textDraw(AImode, Font, height, ink, RIGHT, CENTER, width*1/2, height*1/16, width*1/4, height*1/16);
 }
@@ -49,7 +50,7 @@ fill(color1);
   xHeight = height*1/8;
   rect(xX, xY, xWidth, xHeight);
   
-  float xScrX, xScrY, xScrWidth, xScrHeight;
+  
   xScrX = width*3/8;
   xScrY = height*1/8;
   xScrWidth = width*1/8;
@@ -63,7 +64,7 @@ fill(color1);
   yHeight = height*1/8;
   rect(yX, yY, yWidth, yHeight);
   
-  float yScrX, yScrY, yScrWidth, yScrHeight;
+  
   yScrX = width*5/8;
   yScrY = height*1/8;
   yScrWidth = width*1/8;
