@@ -208,7 +208,10 @@ void resetButtonMouseClicked() {
   noDraw = new Boolean[9];
   setUpReadArraysVariables();
 GUI_Setup();
-winCheck();
+winCheckX();
+winCheckO();
+Xscr = 0;
+Oscr = 0;
 Run = true;
   }
 }

@@ -1,19 +1,20 @@
 
 void setup(){
+  Run = true;
   size(500, 600);
   textSetup();
   ButtonSetup();
   GUI_Setup();
   setUpReadArraysVariables();
  
-}//ADD LINES!!!!
+}//FIX SCORE TALLY
 
 void draw(){
+  if (Run != false){
   TextDraw();
  DrawButtons();
  twoPlayerKey();
- 
-   
+  }
 }
 
 void keyPressed(){
@@ -21,6 +22,8 @@ void keyPressed(){
 }
 
 void mousePressed(){
+  
 clickXO();
   ButtonsClicked();
+  
 }

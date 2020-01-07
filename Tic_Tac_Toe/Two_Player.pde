@@ -3,8 +3,10 @@ void play2player() {
   //Current Procedure
   //println("Play two player");
   drawXO();
-  Boolean win = winCheck();
-  if (win == true) winDraw();
+  Boolean winX = winCheckX();
+  if (winX == true){ winDrawX();}
+  Boolean winO = winCheckO();
+  if (winO == true){ winDrawO();}
 }
 
 void twoPlayerKey() {
