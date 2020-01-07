@@ -11,9 +11,7 @@ void easy() {
 void medium() {
 
 }
-//println ("First Drawcounter", drawCounter);
-//println ("First AI_Turn", AI_Turn);
-//println("Outside AI", firstAI_turn);
+
 
 void hard() {
 }
