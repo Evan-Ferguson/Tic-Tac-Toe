@@ -13,9 +13,17 @@ void easy() {
 }
 
 void medium() {
+  drawXO();
+  Boolean winX = winCheckX();
+  if (winX == true){ winDrawX();}
+  Boolean winO = winCheckO();
+  if (winO == true){ winDrawO();}
+  if(Run != false){
+  drawXO();
 
+  
 }
-
+}
 
 void hard() {
 }
