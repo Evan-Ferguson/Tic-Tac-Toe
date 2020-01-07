@@ -1,7 +1,7 @@
 float[] spaceX = new float[9];
 float[] spaceY = new float[9];
 float spaceWidth, spaceHeight;
-float yScrX, yScrY, yScrWidth, yScrHeight;
+float oScrX, oScrY, oScrWidth, oScrHeight;
 float xScrX, xScrY, xScrWidth, xScrHeight;
 
 void TextDraw(){
@@ -57,19 +57,19 @@ fill(color1);
   xScrHeight = height*1/8;
   rect(xScrX, xScrY, xScrWidth, xScrHeight);
   
-    float yX, yY, yWidth, yHeight;
-  yX = width*4/8;
-  yY = height*1/8;
-  yWidth = width*1/8;
-  yHeight = height*1/8;
-  rect(yX, yY, yWidth, yHeight);
+    float oX, oY, oWidth, oHeight;
+  oX = width*4/8;
+  oY = height*1/8;
+  oWidth = width*1/8;
+  oHeight = height*1/8;
+  rect(oX, oY, oWidth, oHeight);
   
   
-  yScrX = width*5/8;
-  yScrY = height*1/8;
-  yScrWidth = width*1/8;
-  yScrHeight = height*1/8;
-  rect(yScrX, yScrY, yScrWidth, yScrHeight);
+  oScrX = width*5/8;
+  oScrY = height*1/8;
+  oScrWidth = width*1/8;
+  oScrHeight = height*1/8;
+  rect(oScrX, oScrY, oScrWidth, oScrHeight);
  
  float space1X, space1Y;
  space1X = width*0;

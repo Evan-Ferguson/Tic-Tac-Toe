@@ -210,8 +210,6 @@ void resetButtonMouseClicked() {
 GUI_Setup();
 winCheckX();
 winCheckO();
-Xscr = 0;
-Oscr = 0;
 Run = true;
   }
 }

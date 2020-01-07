@@ -53,16 +53,22 @@ void winDrawX() {
   if (Run != false){
   println("X wins.");
   Xscr = Xscr + 1;
-  textDraw(xscr, Font, height, ink, CENTER, CENTER, width*3/8, height*1/8, width*1/8, height*1/8);
+  xscr = str(Xscr);
+  fill(color1);
+  rect(width*3/8, height*1/8, width*1/8, height*1/8);
+  TextDraw();
   Run = false;
-  //reset=true; //Must restart game here
+  
 }}
 
 void winDrawO() {
    if (Run != false){
   println("O wins.");
   Oscr = Oscr + 1;
-
-Run = false;
-  //reset=true; //Must restart game here
+  oscr = str(Oscr);
+  fill(color1);
+  rect(width*4/8, height*1/8, width*1/8, height*1/8);
+  TextDraw();
+  Run = false;
+  
 }}
