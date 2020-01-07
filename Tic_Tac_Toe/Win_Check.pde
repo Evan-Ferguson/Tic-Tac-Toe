@@ -58,7 +58,7 @@ void winDrawX() {
   rect(width*3/8, height*1/8, width*1/8, height*1/8);
   TextDraw();
   Run = false;
-  
+
 }}
 
 void winDrawO() {
@@ -70,5 +70,5 @@ void winDrawO() {
   rect(width*4/8, height*1/8, width*1/8, height*1/8);
   TextDraw();
   Run = false;
-  
+
 }}

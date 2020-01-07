@@ -12,6 +12,7 @@ if(Run != false){
     if ( noDraw[i]==true) {
       if (clickX[i]==true) {
         noStroke();
+        fill(color1);
         rect(spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         textDraw(x, Font, height, ink, CENTER, CENTER, spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         stroke(1);
@@ -23,11 +24,12 @@ if(Run != false){
         
       } else if (clickO[i]==true) {
         noStroke();
+        fill(color1);
         rect(spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         textDraw(o, Font, height, ink, CENTER, CENTER, spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         stroke(1);
 
-        //fill(color1);
+        
 
         
       } else {
@@ -39,7 +41,7 @@ if(Run != false){
 
 
 void clickXO() {
-  //rect(spaceX1, spaceY1, spaceWidth, spaceHeight);
+
   int XOclick;
   for (int i=0; i<noDraw.length; i++) {
     if (mouseX>spaceX[i] && mouseX<spaceX[i]+spaceWidth && mouseY>spaceY[i] && mouseY<spaceY[i]+spaceHeight ) {

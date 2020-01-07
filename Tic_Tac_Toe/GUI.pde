@@ -33,8 +33,8 @@ fill(color1);
   for (int i=6; i<9; i++) {
     spaceY[i] = height * 3/4; //spaceY7 = spaceY8 = spaceY9 = height * 3/4;
   }
- spaceWidth = width*1/3;
- spaceHeight = height*2/8;
+ spaceWidth = width*995/3000;
+ spaceHeight = height*199/800;
  
   float AiModeX, AiModeY, AiModeHeight, AiModeWidth;
   AiModeX = width*1/2;
