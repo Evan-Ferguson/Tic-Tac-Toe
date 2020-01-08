@@ -13,8 +13,13 @@ void twoPlayerKey() {
   if ( twoPlayer == true) {
     play2player();
   } else if (onePlayer == true) {
-    if(easy==true) easy();
-    if(medium==true) medium();
-    if(hard==true) hard();
+    if(easy==true){ easy();
+  }else{
+    if(medium==true){ medium();
+    }else{
+    if(hard==true){ hard();
+    }
+    }
+  }
   }
 }

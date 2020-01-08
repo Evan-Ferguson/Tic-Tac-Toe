@@ -18,10 +18,24 @@ void medium() {
   if (winX == true){ winDrawX();}
   Boolean winO = winCheckO();
   if (winO == true){ winDrawO();}
+  
   if(Run != false){
   drawXO();
-
-  
+  if(turn == 1){
+    randomChoice();//implement purpesfull clicks later
+  }else{
+    int AI_Turn = turn % 2;
+  if (turn == 3){
+    BlockTwoInARow();
+    randomChoice();
+  }else{ 
+  if(AI_Turn == 1){
+    WinTwoInARow();
+    BlockTwoInARow();
+    randomChoice();
+  }
+  }
+ }
 }
 }
 
@@ -29,6 +43,8 @@ void hard() {
 }
 
 void randomChoice() {
+  int AI_Turn = turn % 2;
+  if(AI_Turn == 1){
   Boolean randomeChosen = false;
   int[] nums = new int[9];
   int index = int(random(nums.length));
@@ -57,4 +73,5 @@ void randomChoice() {
   } else {
   }//Empty else decision
   println("Random Index:", index);
+}
 }
