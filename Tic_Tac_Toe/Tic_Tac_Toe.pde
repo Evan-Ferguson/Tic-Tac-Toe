@@ -7,7 +7,7 @@ void setup(){
   GUI_Setup();
   setUpReadArraysVariables();
  
-}//FIX SCORE TALLY
+}
 
 void draw(){
   if (Run != false){
