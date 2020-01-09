@@ -72,3 +72,15 @@ void winDrawO() {
   Run = false;
 
 }}
+
+void TIE(){
+  Boolean winX = winCheckX();
+  Boolean winO = winCheckO();
+if (Run != false){
+  if( winO!=true && winX!=true){
+    if(noDraw[0]==true && noDraw[1]==true && noDraw[2]==true && noDraw[3]==true && noDraw[4]==true && noDraw[5]==true && noDraw[6]==true && noDraw[7]==true && noDraw[8]==true){
+      println("It's a tie!");
+    }
+  }
+}
+}

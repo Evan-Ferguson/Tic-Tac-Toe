@@ -7,6 +7,9 @@ void play2player() {
   if (winX == true){ winDrawX();}
   Boolean winO = winCheckO();
   if (winO == true){ winDrawO();}
+  if( winO!=true && winX!=true){
+    TIE();
+  }
 }
 
 void twoPlayerKey() {

@@ -22,7 +22,7 @@ void medium() {
   if(Run != false){
   drawXO();
   if(turn == 1){
-    randomChoice();//implement purpesfull clicks later
+    mediumT1();
   }else{
     int AI_Turn = turn % 2;
   if (turn == 3){

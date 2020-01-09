@@ -7,7 +7,7 @@ boolean Run = true;
 
 void drawXO() {
 if(Run != false){
-  int XOdraw = turn % 2;
+  
     for (int i=0; i<noDraw.length; i++) {
     if ( noDraw[i]==true) {
       if (clickX[i]==true) {
