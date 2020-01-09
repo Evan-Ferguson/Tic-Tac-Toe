@@ -6,7 +6,7 @@ void setup(){
   ButtonSetup();
   GUI_Setup();
   setUpReadArraysVariables();
- 
+
 }
 
 void draw(){
@@ -24,6 +24,6 @@ void keyPressed(){
 void mousePressed(){
   
 clickXO();
-  ButtonsClicked();
+ButtonsClicked();
   
 }

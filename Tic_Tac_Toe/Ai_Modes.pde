@@ -7,8 +7,9 @@ void easy() {
   if(Run != false){
   drawXO(); //don't need to reference clickXO(), always listening
   int AI_Turn = turn % 2;
-  if (AI_Turn == 1) randomChoice();
-
+  if (AI_Turn == 1){
+    randomChoice();
+  }
 }
 }
 
@@ -49,8 +50,9 @@ void randomChoice() {
   int[] nums = new int[9];
   int index = int(random(nums.length));
   if (noDraw[index]==true ) {
-    while (randomeChosen == false) {
+    while (randomeChosen == false) {//infinite loop on turn 7(Last turn) causes game to freeze.
       index = int(random(nums.length));
+      println(index);
       if (noDraw[index]==false) randomeChosen = true;
     }
   }
