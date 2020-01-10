@@ -60,15 +60,16 @@ void hard() {
     HardT1();
   }else{
     int AI_Turn = turn % 2;
-  if (turn == 3){
-    BlockTwoInARow();
-    randomChoice();
-  }else{ 
+   // BlockDoubleThreat();
+   // BlockTwoInARow();
+    //randomChoice();
+  
   if(AI_Turn == 1){
     WinTwoInARow();
+    BlockDoubleThreat();
     BlockTwoInARow();
     randomChoice();
-  }
+  
   }
   }
   }
