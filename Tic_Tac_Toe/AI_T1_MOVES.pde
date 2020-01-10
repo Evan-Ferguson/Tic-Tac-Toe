@@ -38,3 +38,7 @@ void mediumT1() {
     turn++; return;
   }
 }
+
+void HardT1() {
+  
+}

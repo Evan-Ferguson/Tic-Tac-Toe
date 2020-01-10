@@ -46,6 +46,32 @@ void medium() {
 }
 
 void hard() {
+    drawXO();
+  Boolean winX = winCheckX();
+  if (winX == true){ winDrawX();}
+  Boolean winO = winCheckO();
+  if (winO == true){ winDrawO();}
+    if( winO!=true && winX!=true){
+    TIE();
+  }
+   if(Run != false){
+  drawXO();
+  if(turn == 1){
+    HardT1();
+  }else{
+    int AI_Turn = turn % 2;
+  if (turn == 3){
+    BlockTwoInARow();
+    randomChoice();
+  }else{ 
+  if(AI_Turn == 1){
+    WinTwoInARow();
+    BlockTwoInARow();
+    randomChoice();
+  }
+  }
+  }
+  }
 }
 
 void randomChoice() {
@@ -54,10 +80,11 @@ void randomChoice() {
   Boolean randomeChosen = false;
   int[] nums = new int[9];
   int index = int(random(nums.length));
-  if (clickX[index]==true ) {
-    while (randomeChosen == false) {//{infinite loop on turn 7(Last turn) causes game to freeze.a }FIXED!!//changes noDraw  to clickX
+  if (noDraw[index]==true ) {
+    while (randomeChosen == false) {//{infinite loop on turn 7(Last turn) causes game to freeze.a }//FIXED!! 
       index = int(random(nums.length));
-      if (clickX[index]==false) randomeChosen = true;
+      if (clickX[index]==false && clickO[index]==false) randomeChosen = true;//PREVENTS INFINITE LOOP ON LAST TURN
+      if (noDraw[index]==false && clickO[index]==false) randomeChosen = true;
     }
   }
   turn++; //drawCounter=drawCounter+1

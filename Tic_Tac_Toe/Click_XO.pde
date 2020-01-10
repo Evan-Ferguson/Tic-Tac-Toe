@@ -40,6 +40,7 @@ if(Run != false){
 
 void clickXO() {
   int XOclick;
+  if(Mode != "player mode"){
   for (int i=0; i<noDraw.length; i++) {
     if (mouseX>spaceX[i] && mouseX<spaceX[i]+spaceWidth && mouseY>spaceY[i] && mouseY<spaceY[i]+spaceHeight ) {
       if(clickO[i] == false && clickX[i] == false){
@@ -54,6 +55,7 @@ void clickXO() {
       } else {
       }
       }
+    }
     }
   }
 }
