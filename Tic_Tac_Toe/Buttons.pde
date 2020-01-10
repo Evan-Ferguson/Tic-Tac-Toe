@@ -274,7 +274,7 @@ void hardButtonMouseClicked() {
 }
 
 void DrawButtons(){
-    quitButtonDraw();
+  quitButtonDraw();
   resetButtonDraw();
   easyButtonDraw();
   mediumButtonDraw();
@@ -285,11 +285,17 @@ void DrawButtons(){
 
 
 void ButtonsClicked(){
-    quitButtonMouseClicked();
-  darkButtonMouseClicked();
+  if(InGame != true){
   resetButtonMouseClicked();
+  }
+  quitButtonMouseClicked();
+  if(Run != false){
+  darkButtonMouseClicked();
+  if(InGame != true){
   modeButtonMouseClicked();
   hardButtonMouseClicked();
   mediumButtonMouseClicked();
   easyButtonMouseClicked();
+  }
+}
 }

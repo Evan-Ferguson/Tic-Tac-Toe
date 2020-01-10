@@ -44,6 +44,7 @@ void clickXO() {
   int XOclick;
   for (int i=0; i<noDraw.length; i++) {
     if (mouseX>spaceX[i] && mouseX<spaceX[i]+spaceWidth && mouseY>spaceY[i] && mouseY<spaceY[i]+spaceHeight ) {
+      if(clickO[i] == false && clickX[i] == false){
       turn++; //turn=turn+1
       XOclick = turn % 2;
       if (XOclick == 1) {
@@ -53,6 +54,7 @@ void clickXO() {
         clickO[i] = true;
         noDraw[i] = true;
       } else {
+      }
       }
     }
   }

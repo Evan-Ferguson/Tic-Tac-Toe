@@ -10,9 +10,9 @@ void setup(){
 }
 
 void draw(){
+  DrawButtons();
   if (Run != false){
   TextDraw();
- DrawButtons();
  twoPlayerKey();
   }
 }
@@ -22,7 +22,7 @@ void keyPressed(){
 }
 
 void mousePressed(){
-  
+  CheckInGame();
 clickXO();
 ButtonsClicked();
   

@@ -58,7 +58,7 @@ void winDrawX() {
   rect(width*3/8, height*1/8, width*1/8, height*1/8);
   TextDraw();
   Run = false;
-
+  InGame = false;
 }}
 
 void winDrawO() {
@@ -69,8 +69,8 @@ void winDrawO() {
   fill(color1);
   rect(width*4/8, height*1/8, width*1/8, height*1/8);
   TextDraw();
+  InGame = false;
   Run = false;
-
 }}
 
 void TIE(){
@@ -79,7 +79,9 @@ void TIE(){
 if (Run != false){
   if( winO!=true && winX!=true){
     if(noDraw[0]==true && noDraw[1]==true && noDraw[2]==true && noDraw[3]==true && noDraw[4]==true && noDraw[5]==true && noDraw[6]==true && noDraw[7]==true && noDraw[8]==true){
+      InGame = false;
       println("It's a tie!");
+      Run = false;
     }
   }
 }
