@@ -4,6 +4,9 @@ void easy() {
   if (winX == true){ winDrawX();}
   Boolean winO = winCheckO();
   if (winO == true){ winDrawO();}
+    if( winO!=true && winX!=true){
+    TIE();
+  }
   if(Run != false){
   drawXO(); //don't need to reference clickXO(), always listening
   int AI_Turn = turn % 2;
@@ -19,7 +22,9 @@ void medium() {
   if (winX == true){ winDrawX();}
   Boolean winO = winCheckO();
   if (winO == true){ winDrawO();}
-  
+    if( winO!=true && winX!=true){
+    TIE();
+  }
   if(Run != false){
   drawXO();
   if(turn == 1){
@@ -49,10 +54,10 @@ void randomChoice() {
   Boolean randomeChosen = false;
   int[] nums = new int[9];
   int index = int(random(nums.length));
-  if (noDraw[index]==true ) {
-    while (randomeChosen == false) {//infinite loop on turn 7(Last turn) causes game to freeze.a 
+  if (clickX[index]==true ) {
+    while (randomeChosen == false) {//{infinite loop on turn 7(Last turn) causes game to freeze.a }FIXED!!//changes noDraw  to clickX
       index = int(random(nums.length));
-      if (noDraw[index]==false) randomeChosen = true;
+      if (clickX[index]==false) randomeChosen = true;
     }
   }
   turn++; //drawCounter=drawCounter+1

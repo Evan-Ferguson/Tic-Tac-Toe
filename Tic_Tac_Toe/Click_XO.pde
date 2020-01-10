@@ -17,7 +17,6 @@ if(Run != false){
         textDraw(x, Font, height, ink, CENTER, CENTER, spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         stroke(1);
 
-        //fill(color1);
 
         
 
@@ -28,9 +27,8 @@ if(Run != false){
         rect(spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         textDraw(o, Font, height, ink, CENTER, CENTER, spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         stroke(1);
-
+ 
         
-
         
       } else {
       }
