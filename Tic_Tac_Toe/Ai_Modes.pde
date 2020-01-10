@@ -50,9 +50,8 @@ void randomChoice() {
   int[] nums = new int[9];
   int index = int(random(nums.length));
   if (noDraw[index]==true ) {
-    while (randomeChosen == false) {//infinite loop on turn 7(Last turn) causes game to freeze.
+    while (randomeChosen == false) {//infinite loop on turn 7(Last turn) causes game to freeze.a 
       index = int(random(nums.length));
-      println(index);
       if (noDraw[index]==false) randomeChosen = true;
     }
   }
