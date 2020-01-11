@@ -3,22 +3,22 @@ Boolean winCheckX() {
   // i=0,3,6; j=1
   for (int i=0; i<7; i=i+3) {
     int j = 1;
-    if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) winX = true;
+    if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true && clickO[i]==false && clickO[i+j]==false && clickO[i+j+j]==false){ winX = true;}//colloms
   }
   //i=0,1,2; j=3
   for (int i=0; i<3; i++) {
     int j = 3;
-    if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) winX = true;
+    if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true && clickO[i]==false && clickO[i+j]==false && clickO[i+j+j]==false){ winX = true;}//rows
   }
   // i=0; j=4
   int i = 0;
   int j = 4;
-  if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) winX = true;
+  if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true && clickO[i]==false && clickO[i+j]==false && clickO[i+j+j]==false){ winX = true;}//TL-BR diagnol
   //
   // i=2; j=2
   i = 2;
   j = 2;
-  if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true ) winX = true;
+  if (clickX[i]==true && clickX[i+j]==true && clickX[i+j+j]==true && clickO[i]==false && clickO[i+j]==false && clickO[i+j+j]==false){ winX = true;}//TR-BL diagnol
 
   return winX;
 
@@ -28,22 +28,22 @@ Boolean winCheckO() {
   // i=0,3,6; j=1
   for (int i=0; i<7; i=i+3) {
     int j = 1;
-    if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) winO = true;
+    if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true && clickX[i]==false && clickX[i+j]==false && clickX[i+j+j]==false){ winO = true;println("1");}//colloms
   }
   //i=0,1,2; j=3
   for (int i=0; i<3; i++) {
     int j = 3;
-    if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) winO = true;
+    if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true && clickX[i]==false && clickX[i+j]==false && clickX[i+j+j]==false){ winO = true;println("2");}//rows
   }
   // i=0; j=4
   int i = 0;
   int j = 4;
-  if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) winO = true;
+  if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true && clickX[i]==false && clickX[i+j]==false && clickX[i+j+j]==false){ winO = true;println("3");}//TL-BR diagnol
   //
   // i=2; j=2
   i = 2;
   j = 2;
-  if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true ) winO = true;
+  if (clickO[i]==true && clickO[i+j]==true && clickO[i+j+j]==true && clickX[i]==false && clickX[i+j]==false && clickX[i+j+j]==false){ winO = true;println("4");}//TR-BL diagnol
 
   return winO;
   

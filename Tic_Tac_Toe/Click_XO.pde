@@ -10,25 +10,19 @@ if(Run != false){
   
     for (int i=0; i<noDraw.length; i++) {
     if ( noDraw[i]==true) {
-      if (clickX[i]==true) {
+      if (clickX[i]==true && clickO[i]==false) {
         noStroke();
         fill(color1);
         rect(spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         textDraw(x, Font, height, ink, CENTER, CENTER, spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         stroke(1);
-
-
         
-
-        
-      } else if (clickO[i]==true) {
+      } else if (clickO[i]==true && clickX[i]==false) {
         noStroke();
         fill(color1);
         rect(spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         textDraw(o, Font, height, ink, CENTER, CENTER, spaceX[i], spaceY[i], spaceWidth, spaceHeight);
         stroke(1);
- 
-        
         
       } else {
       }
@@ -43,7 +37,7 @@ void clickXO() {
   if(Mode != "player mode"){
   for (int i=0; i<noDraw.length; i++) {
     if (mouseX>spaceX[i] && mouseX<spaceX[i]+spaceWidth && mouseY>spaceY[i] && mouseY<spaceY[i]+spaceHeight ) {
-      if(clickO[i] == false && clickX[i] == false){
+      if(clickO[i] == false && clickX[i] == false && noDraw[i]==false){
       turn++; //turn=turn+1
       XOclick = turn % 2;
       if (XOclick == 1) {

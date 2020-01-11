@@ -3,6 +3,7 @@
 // Recognize 2 in a row, pass choice to pick to the correct type
 
 void BlockTwoInARow() {//CHECK IF O IS ALREADY BLOCKING!!!
+
   int AI_Turn = turn % 2;
   if (AI_Turn == 1){
   if (clickX[0]==true && clickX[1]==true && clickX[2]==false && clickO[2]==false) {clickO[2]=true; noDraw[2]=true; turn++; return;}
@@ -41,6 +42,7 @@ void BlockTwoInARow() {//CHECK IF O IS ALREADY BLOCKING!!!
 }
 
 void WinTwoInARow() {//CHECK IF X IS BLOCKING!!!
+
   int AI_Turn = turn % 2;
   if (AI_Turn == 1){
   if (clickO[0]==true && clickO[1]==true && clickO[2]==false && clickX[2]==false) {clickO[2]=true; noDraw[2]=true; turn++; return;}

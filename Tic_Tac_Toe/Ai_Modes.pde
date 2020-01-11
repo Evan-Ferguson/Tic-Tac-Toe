@@ -59,21 +59,25 @@ void hard() {
   if(turn == 1){
     HardT1();
   }else{
-    int AI_Turn = turn % 2;
-   // BlockDoubleThreat();
-   // BlockTwoInARow();
-    //randomChoice();
-  
-  if(AI_Turn == 1){
+    if(turn == 3){
     WinTwoInARow();
     BlockDoubleThreat();
+    BlockTwoInARow();
+    randomChoice();
+  }else{
+    int AI_Turn = turn % 2;
+  if(AI_Turn == 1){
+    WinTwoInARow();
     BlockTwoInARow();
     randomChoice();
   
   }
   }
   }
+ }
 }
+
+
 
 void randomChoice() {
   int AI_Turn = turn % 2;
@@ -81,11 +85,12 @@ void randomChoice() {
   Boolean randomeChosen = false;
   int[] nums = new int[9];
   int index = int(random(nums.length));
-  if (noDraw[index]==true ) {
+  if (noDraw[index]==true) {
     while (randomeChosen == false) {//{infinite loop on turn 7(Last turn) causes game to freeze.a }//FIXED!! 
       index = int(random(nums.length));
-      if (clickX[index]==false && clickO[index]==false) randomeChosen = true;//PREVENTS INFINITE LOOP ON LAST TURN
-      if (noDraw[index]==false && clickO[index]==false) randomeChosen = true;
+     if (clickX[index]==false && clickO[index]==false){ randomeChosen = true;}//PREVENTS INFINITE LOOP ON LAST TURN
+     if (noDraw[index]==false){ randomeChosen = true;}
+     
     }
   }
   turn++; //drawCounter=drawCounter+1
