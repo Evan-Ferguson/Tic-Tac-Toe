@@ -1,6 +1,7 @@
 //Global Variable
 PFont Font;
-String quit = "X";
+String Theme = "Theme:Original";
+String quit = "Quit";
 String x = "X";
 String o = "O";
 String X = "X:";
