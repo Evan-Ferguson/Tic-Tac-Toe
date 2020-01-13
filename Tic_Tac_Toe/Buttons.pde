@@ -247,6 +247,10 @@ Run = true;
 
 void modeButtonMouseClicked() {
   if (mouseX >= width*0  && mouseX <= width*1/2 && mouseY >= height*1/16 && mouseY <= height*2/16) {
+Xscr = 0;
+Oscr = 0;
+oscr = str(Oscr);
+xscr = str(Xscr);
   Mode = mode2; mode2 = mode1; mode1 = Mode;
 if (Mode != "player mode"){
   nomode = false;
@@ -270,6 +274,10 @@ if(Mode == "one-player"){
 
 void easyButtonMouseClicked() {
   if (mouseX >=  width*6/8  && mouseX <= width && mouseY >= height*3/24 && mouseY <= height*4/24) {
+Xscr = 0;
+Oscr = 0;
+oscr = str(Oscr);
+xscr = str(Xscr);
     if(Mode != "player mode"){
     if(Mode != "two-player"){
   easy = true; medium = false; hard = false;
@@ -282,6 +290,10 @@ void easyButtonMouseClicked() {
 
 void mediumButtonMouseClicked() {
   if (mouseX >=  width*6/8  && mouseX <= width && mouseY >= height*4/24 && mouseY <= height*5/24) {
+Xscr = 0;
+Oscr = 0;
+oscr = str(Oscr);
+xscr = str(Xscr);
     if(Mode != "player mode"){
     if(Mode != "two-player"){
   easy = false; medium = true; hard = false;
@@ -294,6 +306,10 @@ void mediumButtonMouseClicked() {
 
 void hardButtonMouseClicked() {
   if (mouseX >=  width*6/8  && mouseX <= width && mouseY >= height*5/24 && mouseY <= height*6/24) {
+Xscr = 0;
+Oscr = 0;
+oscr = str(Oscr);
+xscr = str(Xscr);
     if(Mode != "player mode"){
     if(Mode != "two-player"){
   easy = false; medium = false; hard = true;
