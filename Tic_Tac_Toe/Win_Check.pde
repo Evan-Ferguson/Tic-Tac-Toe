@@ -67,8 +67,8 @@ void winDrawO() {
   Oscr = Oscr + 1;
   oscr = str(Oscr);
   fill(color1);
-  rect(width*4/8, height*1/8, width*1/8, height*1/8);
-  TextDraw();
+  rect(width*4/8, height*1/8, width*1/8, height*1/8);//resets score square
+  TextDraw();//draws new score
   InGame = false;
   Run = false;
 }}

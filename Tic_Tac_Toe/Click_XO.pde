@@ -31,8 +31,10 @@ if(Run != false){
 
 
 void clickXO() {
+Boolean winO = winCheckO();
+Boolean winX = winCheckX();
   int XOclick;
-  if(Mode != "player mode" && ColourOpen!=true){
+  if(Mode != "player mode" && ColourOpen!=true&&winX==false&&winO==false){
   for (int i=0; i<noDraw.length; i++) {
     if (mouseX>spaceX[i] && mouseX<spaceX[i]+spaceWidth && mouseY>spaceY[i] && mouseY<spaceY[i]+spaceHeight ) {
       if(clickO[i] == false && clickX[i] == false && noDraw[i]==false){
