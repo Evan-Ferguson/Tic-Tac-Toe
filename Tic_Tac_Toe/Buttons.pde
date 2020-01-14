@@ -2,6 +2,12 @@
 void quitButtonRect() {
   rect(width*7/8, height*0, width*1/8, height*1/24);//X, Y, Width, Height
 }
+void PlayXButtonRect(){
+ rect(width*0,  height*0, width*1/4, height*1/16);
+}
+void PlayOButtonRect(){
+rect(width*1/4,  height*0, width*1/4, height*1/16);
+}
 void colourButtonRect(){
   rect(width*6/8, height*1/24, width*2/8, height*1/24);
 }
@@ -26,6 +32,8 @@ void hardButtonRect(){
 void ButtonSetup() {
   colourButtonRect();//opens colour picker/displays current colour
   quitButtonRect();//Quit Button
+  PlayXButtonRect();//draws play as X button
+  PlayOButtonRect();//draws play as O button
   resetButtonRect();//reset button
   easyButtonRect();//easy button
   mediumButtonRect();//medium button
@@ -73,6 +81,42 @@ void quitButtonDraw() {
   textAlign (CENTER, CENTER);
   textFont(Font, 15);
   text(Theme, width*6/8, height*1/24, width*2/8, height*1/24);
+  fill(255);
+  ink = color2;
+  }
+  
+    void PlayXButtonDraw() {
+  if (mouseX >= width*0  && mouseX <= width*1/4 && mouseY >= height*0 && mouseY <= height*1/16) {
+    ink = color1;
+    fill(color2);
+    PlayXButtonRect();
+  } else {
+    ink = color2;
+    fill(color1);
+    PlayXButtonRect();
+  }
+  fill(ink);
+  textAlign (CENTER, CENTER);
+  textFont(Font, 30);
+  text("Play as X", width*0,  height*0, width*1/4, height*1/16);
+  fill(255);
+  ink = color2;
+  }
+  
+    void PlayOButtonDraw() {
+  if (mouseX >= width*1/4  && mouseX <= width*1/2 && mouseY >= height*0 && mouseY <= height*1/16) {
+    ink = color1;
+    fill(color2);
+    PlayOButtonRect();
+  } else {
+    ink = color2;
+    fill(color1);
+    PlayOButtonRect();
+  }
+  fill(ink);
+  textAlign (CENTER, CENTER);
+  textFont(Font, 30);
+  text("Play as O", width*1/4,  height*0, width*1/4, height*1/16);
   fill(255);
   ink = color2;
   }
@@ -204,6 +248,8 @@ void quitButtonDraw() {
   hardButtonDraw();
   InvertColourButtonDraw();
   }
+  PlayXButtonDraw();
+  PlayOButtonDraw();
   modeButtonDraw();
 }
   

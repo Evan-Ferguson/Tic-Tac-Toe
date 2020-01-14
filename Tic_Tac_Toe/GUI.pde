@@ -36,13 +36,6 @@ fill(color1);
  spaceWidth = width*1/3;
  spaceHeight = height*2/8;
  
-// float XorOx, XorOy, XorOWidth, XorOHeight;
-// XorOx = width*0;
- //XorOy = height*0;
-// XorOWidth = width*1/2;
-// XorOHeight = height*1/8;
- //rect(XorOx, XorOy, XorOWidth, XorOHeight);
- 
   float AiModeX, AiModeY, AiModeHeight, AiModeWidth;
   AiModeX = width*1/2;
   AiModeY = height*1/16;
