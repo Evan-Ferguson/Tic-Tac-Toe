@@ -86,7 +86,7 @@ void quitButtonDraw() {
   }
   
     void PlayXButtonDraw() {
-  if (mouseX >= width*0  && mouseX <= width*1/4 && mouseY >= height*0 && mouseY <= height*1/16) {
+if (mouseX >= width*0  && mouseX <= width*1/4 && mouseY >= height*0 && mouseY <= height*1/16) {
     ink = color1;
     fill(color2);
     PlayXButtonRect();
@@ -104,7 +104,7 @@ void quitButtonDraw() {
   }
   
     void PlayOButtonDraw() {
-  if (mouseX >= width*1/4  && mouseX <= width*1/2 && mouseY >= height*0 && mouseY <= height*1/16) {
+if (mouseX >= width*1/4  && mouseX <= width*1/2 && mouseY >= height*0 && mouseY <= height*1/16) {
     ink = color1;
     fill(color2);
     PlayOButtonRect();
@@ -113,6 +113,8 @@ void quitButtonDraw() {
     fill(color1);
     PlayOButtonRect();
   }
+  
+
   fill(ink);
   textAlign (CENTER, CENTER);
   textFont(Font, 30);
@@ -269,6 +271,26 @@ void colourButtonMouseClicked(){
   }
 }
 
+Boolean PlayO = false;
+Boolean PlayX = false;
+void PlayXButtonMouseClicked(){
+  if (mouseX >= width*0  && mouseX <= width*1/4 && mouseY >= height*0 && mouseY <= height*1/16){
+    PlayX = true;
+    PlayO = false;
+    PlayXButtonDraw();
+    PlayOButtonDraw();
+  }
+}
+
+void PlayOButtonMouseClicked(){
+  if (mouseX >= width*1/4  && mouseX <= width*1/2 && mouseY >= height*0 && mouseY <= height*1/16){
+    PlayX = false;
+    PlayO = true;
+    PlayXButtonDraw();
+    PlayOButtonDraw();
+  }
+}
+
 Boolean Invert = false;
 void InvertColourButtonMouseClicked() {
   if (mouseX >=  width*6/8  && mouseX <= width && mouseY >= height*2/24 && mouseY <= height*3/24) {
@@ -381,6 +403,8 @@ void ButtonsClicked(){
     }
   if(InGame != true){
   if(ColourOpen!=true){
+  PlayXButtonMouseClicked();
+  PlayOButtonMouseClicked();
   modeButtonMouseClicked();
   hardButtonMouseClicked();
   mediumButtonMouseClicked();
