@@ -8,7 +8,6 @@ void setup(){
   ButtonSetup();
   GUI_Setup();
   setUpReadArraysVariables();
-
 }
 
 void draw(){
@@ -23,6 +22,7 @@ void draw(){
  }
  LinesDraw();
  DrawWinPopup();
+
 }
 
 void keyPressed(){

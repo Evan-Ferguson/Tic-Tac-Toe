@@ -106,8 +106,11 @@ if(winO==true&&winX==false){
     if(noDraw[0]==true && noDraw[1]==true && noDraw[2]==true && noDraw[3]==true && noDraw[4]==true && noDraw[5]==true && noDraw[6]==true && noDraw[7]==true && noDraw[8]==true){
      fill(color1);
  rect(width*1/4, height*1/3, width*1/2, height*1/3);
- textDraw("IT'S A TIE!", Font, height, ink, CENTER, CENTER, width*1/4, height*1/3, width*1/2, height*1/3);
+ textDraw("CATS!", Font, height, ink, CENTER, TOP, width*1/4, height*1/3, width*1/2, height*1/3);
  WinLines();
+  PImage img = loadImage ("Images/");
+  img.resize(width*1/2, height*1069/4000);
+  image(img, width*101/400, height*12/30);
     }
    }
 }
