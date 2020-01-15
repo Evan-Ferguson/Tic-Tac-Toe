@@ -86,7 +86,11 @@ void quitButtonDraw() {
   }
   
     void PlayXButtonDraw() {
-if (mouseX >= width*0  && mouseX <= width*1/4 && mouseY >= height*0 && mouseY <= height*1/16) {
+            if(PlayX==true){
+    ink = color1;
+    fill(color2);
+    PlayXButtonRect();
+      }else if (mouseX >= width*0  && mouseX <= width*1/4 && mouseY >= height*0 && mouseY <= height*1/16) {
     ink = color1;
     fill(color2);
     PlayXButtonRect();
@@ -104,7 +108,11 @@ if (mouseX >= width*0  && mouseX <= width*1/4 && mouseY >= height*0 && mouseY <=
   }
   
     void PlayOButtonDraw() {
-if (mouseX >= width*1/4  && mouseX <= width*1/2 && mouseY >= height*0 && mouseY <= height*1/16) {
+      if(PlayO==true){
+    ink = color1;
+    fill(color2);
+    PlayOButtonRect();
+      }else if (mouseX >= width*1/4  && mouseX <= width*1/2 && mouseY >= height*0 && mouseY <= height*1/16) {
     ink = color1;
     fill(color2);
     PlayOButtonRect();
@@ -315,6 +323,7 @@ Run = true;
 
 void modeButtonMouseClicked() {
   if (mouseX >= width*0  && mouseX <= width*1/2 && mouseY >= height*1/16 && mouseY <= height*2/16) {
+    PlayX = true;
 Xscr = 0;
 Oscr = 0;
 oscr = str(Oscr);

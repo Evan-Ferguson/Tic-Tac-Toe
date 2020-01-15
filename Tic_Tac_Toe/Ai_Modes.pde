@@ -94,15 +94,15 @@ void randomChoice() {
     }
   }
   turn++; //drawCounter=drawCounter+1
-  int XOclick = turn % 2;
-  if (XOclick == 1) {
+  //int XOclick = turn % 2;
+  if (PlayO==true) {
     clickX[index] = true;
     noDraw[index] = true;
     noStroke();
     rect(spaceX[index], spaceY[index], spaceWidth, spaceHeight);
     textDraw(x, Font, height, ink, CENTER, CENTER, spaceX[index], spaceY[index], spaceWidth, spaceHeight);
     stroke(1);
-  } else if (XOclick == 0) {
+  } else if (PlayX==true) {
     clickO[index] = true;
     noDraw[index] = true;
     noStroke();
