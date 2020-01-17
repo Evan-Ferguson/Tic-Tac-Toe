@@ -86,6 +86,8 @@ if (Run != false){
   }
 }
 }
+
+
 void DrawWinPopup(){
   Boolean winO = winCheckO();
 Boolean winX = winCheckX();
@@ -108,9 +110,12 @@ if(winO==true&&winX==false){
  rect(width*1/4, height*1/3, width*1/2, height*1/3);
  textDraw("CATS!", Font, height, ink, CENTER, TOP, width*1/4, height*1/3, width*1/2, height*1/3);
  WinLines();
-  PImage img = loadImage ("Images/");
-  img.resize(width*1/2, height*1069/4000);
-  image(img, width*101/400, height*12/30);
+ PImage CATimg = loadImage ("Images/CAT2.png");
+  CATimg = loadImage ("Images/CAT2.png");
+  CATimg.resize(width*1/2, height*1069/4000);
+  image(CATimg, width*101/400, height*12/30);
+
+
     }
    }
 }

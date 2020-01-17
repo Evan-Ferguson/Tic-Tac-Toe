@@ -2,6 +2,7 @@
 //ctr click function to see original void/where
 //noStroke(); prevents drawing of boarders//stroke(#);addslines # determines colour 1=black
 void setup(){
+  frameRate(60);
   Run = true;
   size(500, 600);
   textSetup();
