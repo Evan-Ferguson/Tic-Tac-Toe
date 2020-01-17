@@ -1,3 +1,4 @@
+
 void mediumT1() {
   if(clickX[4] == true){//center
   clickO[1] = true; noDraw[1] = true;
