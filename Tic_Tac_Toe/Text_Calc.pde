@@ -26,7 +26,7 @@ void textDraw(String string, PFont font, float height, color ink, int alignHoriz
   //Values: LEFT | CENTER | RIGHT & TOP | CENTER | BOTTOM | BASELINE
   //Parameters change depending on font and serifs
   if (string.length() >= 3) {
-    fontSize = textCalculator(height, string, rectWidth);
+    fontSize = textCalculator(width, string, rectWidth);
   } 
   else {
     fontSize = fontSize * 0.08;

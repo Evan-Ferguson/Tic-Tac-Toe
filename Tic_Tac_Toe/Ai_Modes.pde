@@ -9,11 +9,18 @@ void easy() {
   }
   if(Run != false){
   drawXO(); //don't need to reference clickXO(), always listening
-  int AI_Turn = turn % 2;
+    int AI_Turn = turn % 2;
+  if(PlayX==true){
   if (AI_Turn == 1){
     randomChoice();
   }
-}
+  }
+  if(PlayO==true){
+if (AI_Turn == 0){
+    randomChoice();
+  }
+  }
+  }
 }
 
 void medium() {
@@ -25,23 +32,44 @@ void medium() {
     if( winO!=true && winX!=true){
     TIE();
   }
+  int AI_Turn = turn % 2;
   if(Run != false){
   drawXO();
+  if(PlayX==true){
   if(turn == 1){
-    mediumT1();
+    mediumOT1();
   }else{
-    int AI_Turn = turn % 2;
   if (turn == 3){
-    BlockTwoInARow();
+    BlockTwoInARowO();
     randomChoice();
   }else{ 
   if(AI_Turn == 1){
-    WinTwoInARow();
-    BlockTwoInARow();
+    WinTwoInARowO();
+    BlockTwoInARowO();
     randomChoice();
   }
   }
+  }
  }
+ 
+   if(PlayO==true){
+  if(turn == 0){
+    randomChoice();
+  }else{
+  if (turn == 2){
+    MediumXT2();
+    randomChoice();
+  }else{ 
+  if(AI_Turn == 0){
+    WinTwoInARowX();
+    BlockTwoInARowX();
+    randomChoice();
+  }
+  }
+  }
+ }
+ 
+ 
 }
 }
 
@@ -54,21 +82,21 @@ void hard() {
     if( winO!=true && winX!=true){
     TIE();
   }
+ int AI_Turn = turn % 2;
    if(Run != false){
   drawXO();
   if(turn == 1){
-    HardT1();
+    HardOT1();
   }else{
     if(turn == 3){
-    WinTwoInARow();
+    WinTwoInARowO();
     BlockDoubleThreat();
-    BlockTwoInARow();
+    BlockTwoInARowO();
     randomChoice();
   }else{
-    int AI_Turn = turn % 2;
   if(AI_Turn == 1){
-    WinTwoInARow();
-    BlockTwoInARow();
+    WinTwoInARowO();
+    BlockTwoInARowO();
     randomChoice();
   
   }
@@ -80,8 +108,13 @@ void hard() {
 
 
 void randomChoice() {
-  int AI_Turn = turn % 2;
-  if(AI_Turn == 1){
+  int XOclick = turn % 2;
+  if(PlayX==true&&XOclick==0){
+    return;
+  }
+  if(PlayO==true&&XOclick==1){
+    return;
+  }
   Boolean randomeChosen = false;
   int[] nums = new int[9];
   int index = int(random(nums.length));
@@ -94,7 +127,6 @@ void randomChoice() {
     }
   }
   turn++; //drawCounter=drawCounter+1
-  //int XOclick = turn % 2;
   if (PlayO==true) {
     clickX[index] = true;
     noDraw[index] = true;
@@ -112,5 +144,4 @@ void randomChoice() {
   } else {
   }//Empty else decision
   println("Random Index:", index);
-}
 }

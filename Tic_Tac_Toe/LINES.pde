@@ -10,13 +10,12 @@ void LinesDraw(){
   rect(width*3/4, height*2/24, width*1/4, height*1/300);
   rect(width*3/4, height*3/24, width*1/4, height*1/300);
   rect(width*3/4, height*4/24, width*1/4, height*1/300);
-  rect(width*3/4, height*5/24, width*1/4, height*1/300);
   
   //vertical lines
   rect(width*1/3, height*1/4, width*1/250, height*3/4);//board
   rect(width*2/3, height*1/4, width*1/250, height*3/4);
   rect(width*7/8, height*0, width*1/250, height*1/24);//quit button
-  rect(width*3/4, height*1/24, width*1/250, height*5/24);//smallbutton
+  rect(width*3/4, height*0, width*1/250, height*6/24);//smallbutton
   rect(width*1/2, height*0, width*1/250, height*4/16);//ui
   rect(width*1/4, height*0, width*1/250, height*1/16);
   rect(width*2/8, height*1/8, width*1/250, height*1/8);

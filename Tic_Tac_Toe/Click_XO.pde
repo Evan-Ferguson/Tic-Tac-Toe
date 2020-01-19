@@ -34,9 +34,28 @@ void clickXO() {
 Boolean winO = winCheckO();
 Boolean winX = winCheckX();
   int XOclick;
-  if(Mode != "player mode" && ColourOpen!=true&&winX==false&&winO==false){
+  if(Mode != "player mode" && ColourOpen!=true&&winX==false&&winO==false&&SecretsOpen!=true){
   for (int i=0; i<noDraw.length; i++) {
     if (mouseX>spaceX[i] && mouseX<spaceX[i]+spaceWidth && mouseY>spaceY[i] && mouseY<spaceY[i]+spaceHeight ) {
+      
+      if(Devil==true){
+        if(PlayO==true && PlayX==false){
+          for (int a=0; a<noDraw.length; a++) {
+        clickO[a] = true;
+        noDraw[a] = true;
+          }
+          return;
+        }
+        
+        if(PlayX==true && PlayO==false){
+          for (int b=0; b<noDraw.length; b++) {
+        clickX[b] = true;
+        noDraw[b] = true;
+          }
+          return;
+        }
+      }
+      
       if(clickO[i] == false && clickX[i] == false && noDraw[i]==false){
       turn++; //turn=turn+1
       XOclick = turn % 2;

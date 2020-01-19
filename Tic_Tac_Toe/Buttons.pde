@@ -2,6 +2,12 @@
 void quitButtonRect() {
   rect(width*7/8, height*0, width*1/8, height*1/24);//X, Y, Width, Height
 }
+void InfoButtonRect() {
+  rect(width*6/8, height*0, width*1/8, height*1/24);
+}
+void SecretsButtonRect(){
+ rect(width*2/4,  height*0, width*1/4, height*1/16);
+}
 void PlayXButtonRect(){
  rect(width*0,  height*0, width*1/4, height*1/16);
 }
@@ -30,6 +36,8 @@ void hardButtonRect(){
   rect(width*6/8, height*5/24, width*2/8, height*1/24);
 }
 void ButtonSetup() {
+  SecretsButtonRect();//opens secrets menu
+  InfoButtonRect();//opens info
   colourButtonRect();//opens colour picker/displays current colour
   quitButtonRect();//Quit Button
   PlayXButtonRect();//draws play as X button
@@ -81,6 +89,44 @@ void quitButtonDraw() {
   textAlign (CENTER, CENTER);
   textFont(Font, 15);
   text(Theme, width*6/8, height*1/24, width*2/8, height*1/24);
+  fill(255);
+  ink = color2;
+  }
+  
+      void InfoButtonDraw() {
+if (mouseX >= width*6/8  && mouseX <= width*7/8 && mouseY >= height*0 && mouseY <= height*1/24) {
+    ink = color1;
+    fill(color2);
+    InfoButtonRect();
+  } else {
+    ink = color2;
+    fill(color1);
+    InfoButtonRect();
+  }
+  fill(ink);
+  textAlign (CENTER, CENTER);
+  textFont(Font, 20);
+  text("Info", width*6/8, height*0, width*1/8, height*1/24);
+  fill(255);
+  ink = color2;
+  }
+  
+  void SecretsButtonDraw() {
+if (mouseX >= width*2/4  && mouseX <= width*3/4 && mouseY >= height*0 && mouseY <= height*1/16) {
+    ink = color1;
+    fill(color2);
+    SecretsButtonRect();
+  } else {
+    ink = color2;
+    fill(color1);
+    SecretsButtonRect();
+  }
+  
+
+  fill(ink);
+  textAlign (CENTER, CENTER);
+  textFont(Font, 30);
+  text("Secrets", width*2/4,  height*0, width*1/4, height*1/16);
   fill(255);
   ink = color2;
   }
@@ -253,6 +299,8 @@ void quitButtonDraw() {
   colourButtonDraw();
   resetButtonDraw();
   if(ColourOpen!=true){
+  SecretsButtonDraw();
+  InfoButtonDraw();
   easyButtonDraw();
   mediumButtonDraw();
   hardButtonDraw();
@@ -279,6 +327,25 @@ void colourButtonMouseClicked(){
   }
 }
 
+
+void InfoButtonMouseClicked(){
+  if (mouseX >= width*6/8  && mouseX <= width*7/8 && mouseY >= height*0 && mouseY <= height*1/24){
+  Initial = true;
+  fill(color1);
+  rect(width*1/4, height*1/3, width*1/2, height*1/3);
+  textDraw("Created by Evan Ferguson", Font, height, ink, CENTER, CENTER, width*1/4, height*1/3, width*1/2, height*1/16);
+  textDraw("There are two secrets", Font, height, ink, CENTER, CENTER, width*1/4, height*1/3, width*1/2, height*2/16);
+  textDraw("to unlock.", Font, height, ink, CENTER, CENTER, width*1/4, height*1/3, width*1/2, height*3/16);
+  textDraw("ENJOY!", Font, height, ink, CENTER, CENTER, width*1/4, height*1/3, width*1/2, height*4.5/16);
+  }
+}
+
+void SecretsButtonMouseClicked(){
+  if (mouseX >= width*2/4  && mouseX <= width*3/4 && mouseY >= height*0 && mouseY <= height*1/16){
+    Secrets();
+  }
+}
+
 Boolean PlayO = false;
 Boolean PlayX = false;
 void PlayXButtonMouseClicked(){
@@ -292,6 +359,9 @@ void PlayXButtonMouseClicked(){
 
 void PlayOButtonMouseClicked(){
   if (mouseX >= width*1/4  && mouseX <= width*1/2 && mouseY >= height*0 && mouseY <= height*1/16){
+    if(Mode == "two-player"){
+      return;
+    }
     PlayX = false;
     PlayO = true;
     PlayXButtonDraw();
@@ -314,6 +384,7 @@ void resetButtonMouseClicked() {
   clickO = new Boolean[9];
   noDraw = new Boolean[9];
   setUpReadArraysVariables();
+  twoPlayerKey();
 GUI_Setup();
 winCheckX();
 winCheckO();
@@ -324,6 +395,7 @@ Run = true;
 void modeButtonMouseClicked() {
   if (mouseX >= width*0  && mouseX <= width*1/2 && mouseY >= height*1/16 && mouseY <= height*2/16) {
     PlayX = true;
+    PlayO = false;
 Xscr = 0;
 Oscr = 0;
 oscr = str(Oscr);
@@ -359,7 +431,12 @@ xscr = str(Xscr);
     if(Mode != "two-player"){
   easy = true; medium = false; hard = false;
   AImode = "easy";
-  GUI_Setup();
+  if(InGame != true){
+  fill(color1);
+  rect(width*1/2, height*1/16, width*1/4, height*1/16);
+  textDraw(AI, Font, height, ink, LEFT, CENTER, width*1/2, height*1/16, width*1/8, height*1/16);
+  textDraw(AImode, Font, height, ink, RIGHT, CENTER, width*1/2, height*1/16, width*1/4, height*1/16);
+  }else{GUI_Setup();}
   }
   }
   }
@@ -375,7 +452,12 @@ xscr = str(Xscr);
     if(Mode != "two-player"){
   easy = false; medium = true; hard = false;
   AImode = "medium";
-  GUI_Setup();
+  if(InGame != true){
+  fill(color1);
+  rect(width*1/2, height*1/16, width*1/4, height*1/16);
+  textDraw(AI, Font, height, ink, LEFT, CENTER, width*1/2, height*1/16, width*1/8, height*1/16);
+  textDraw(AImode, Font, height, ink, RIGHT, CENTER, width*1/2, height*1/16, width*1/4, height*1/16);
+  }else{GUI_Setup();}
   }
   }
   }
@@ -391,7 +473,12 @@ xscr = str(Xscr);
     if(Mode != "two-player"){
   easy = false; medium = false; hard = true;
   AImode = "hard";
-  GUI_Setup();
+  if(InGame != true){
+  fill(color1);
+  rect(width*1/2, height*1/16, width*1/4, height*1/16);
+  textDraw(AI, Font, height, ink, LEFT, CENTER, width*1/2, height*1/16, width*1/8, height*1/16);
+  textDraw(AImode, Font, height, ink, RIGHT, CENTER, width*1/2, height*1/16, width*1/4, height*1/16);
+  }else{GUI_Setup();}
   }
   }
   }
@@ -401,23 +488,31 @@ xscr = str(Xscr);
 void ButtonsClicked(){
   if(InGame != true){
     if(ColourOpen == false){
+      if(SecretsOpen == false){
+  PlayXButtonMouseClicked();
+  PlayOButtonMouseClicked();
   resetButtonMouseClicked();
+    hardButtonMouseClicked();
+  mediumButtonMouseClicked();
+  easyButtonMouseClicked();
+      }
     }
   }
   quitButtonMouseClicked();
   if(Run != false){
+    if(SecretsOpen!=true){
     colourButtonMouseClicked();
+    }
     if(ColourOpen!=true){
   InvertColourButtonMouseClicked();
     }
   if(InGame != true){
   if(ColourOpen!=true){
-  PlayXButtonMouseClicked();
-  PlayOButtonMouseClicked();
+    SecretsButtonMouseClicked();
+    if(SecretsOpen!=true){
+  InfoButtonMouseClicked();
   modeButtonMouseClicked();
-  hardButtonMouseClicked();
-  mediumButtonMouseClicked();
-  easyButtonMouseClicked();
+    }  
   }
   }
 }
