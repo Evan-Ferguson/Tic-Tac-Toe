@@ -1,3 +1,5 @@
+
+
 Boolean winCheckX() {
   Boolean winX = false;
   // i=0,3,6; j=1
@@ -49,71 +51,75 @@ Boolean winCheckO() {
   
 }
 
-void winDrawX() {
+void WinCheck(){
+  Boolean CheckwinX = winCheckX();
+  Boolean CheckwinO = winCheckO();
   if (Run != false){
-  println("X wins.");
+    if( CheckwinO!=true && CheckwinX!=true){
+    if(noDraw[0]==true && noDraw[1]==true && noDraw[2]==true && noDraw[3]==true && noDraw[4]==true && noDraw[5]==true && noDraw[6]==true && noDraw[7]==true && noDraw[8]==true){
+     WinOpen = true;
+      InGame = false;
+      println("It's a tie!");
+      Run = false;
+  PImage CATimg = loadImage ("Images/CAT2.png");
+  CATimg = loadImage ("Images/CAT2.png");
+  CATimg.resize(width*1/2, height*1069/4000);
+  image(CATimg, width*101/400, height*12/30);
+  println("It's a tie!");
+    }
+  }
+  
+  if(CheckwinX == true && CheckwinO == false){
+    WinOpen = true;
+    println("X wins.");
   Xscr = Xscr + 1;
   xscr = str(Xscr);
   fill(color1);
   rect(width*3/8, height*1/8, width*1/8, height*1/8);
-  TextDraw();
-  Run = false;
+  textDraw(xscr, Font, height, ink, CENTER, CENTER, width*3/8, height*1/8, width*1/8, height*1/8);
+  textDraw(oscr, Font, height, ink, CENTER, CENTER, width*4/8, height*1/8, width*1/8, height*1/8);
   InGame = false;
-}}
-
-void winDrawO() {
-   if (Run != false){
-  println("O wins.");
+  Run = false;
+  }
+  
+    if(CheckwinX == false && CheckwinO == true){
+      WinOpen = true;
+    println("O wins.");
   Oscr = Oscr + 1;
   oscr = str(Oscr);
   fill(color1);
   rect(width*4/8, height*1/8, width*1/8, height*1/8);//resets score square
-  TextDraw();//draws new score
+  textDraw(xscr, Font, height, ink, CENTER, CENTER, width*3/8, height*1/8, width*1/8, height*1/8);
+  textDraw(oscr, Font, height, ink, CENTER, CENTER, width*4/8, height*1/8, width*1/8, height*1/8);
   InGame = false;
   Run = false;
-}}
-
-void TIE(){
-  Boolean winX = winCheckX();
-  Boolean winO = winCheckO();
-if (Run != false){
-  if( winO!=true && winX!=true){
-    if(noDraw[0]==true && noDraw[1]==true && noDraw[2]==true && noDraw[3]==true && noDraw[4]==true && noDraw[5]==true && noDraw[6]==true && noDraw[7]==true && noDraw[8]==true){
-      InGame = false;
-      println("It's a tie!");
-      Run = false;
-    }
   }
+  
 }
 }
+
 
 
 void DrawWinPopup(){
-  Boolean winO = winCheckO();
+Boolean winO = winCheckO();
 Boolean winX = winCheckX();
 
-if(winO==true&&winX==false){
- fill(color1);
- rect(width*1/4, height*1/3, width*1/2, height*1/3);
- textDraw("O WINS!", Font, height, ink, CENTER, CENTER, width*1/4, height*1/3, width*1/2, height*1/3);
- WinLines();
+if(winO==true && winX==false){
+WinPopUp("O Wins!");
+println("O wins.");
  }
- if(winX==true&&winO==false){
- fill(color1);
- rect(width*1/4, height*1/3, width*1/2, height*1/3);
- textDraw("X WINS!", Font, height, ink, CENTER, CENTER, width*1/4, height*1/3, width*1/2, height*1/3);
- WinLines();
+ if(winX==true && winO==false){
+WinPopUp("X Wins!");
+ println("X wins.");
  }
    if( winO!=true && winX!=true){
     if(noDraw[0]==true && noDraw[1]==true && noDraw[2]==true && noDraw[3]==true && noDraw[4]==true && noDraw[5]==true && noDraw[6]==true && noDraw[7]==true && noDraw[8]==true){
-     fill(color1);
- rect(width*1/4, height*1/3, width*1/2, height*1/3);
- textDraw("CATS!", Font, height, ink, CENTER, TOP, width*1/4, height*1/3, width*1/2, height*1/3);
- WinLines();
- PImage CATimg = loadImage ("Images/CAT2.png");
+  WinPopUp("CATS!");
+    PImage CATimg = loadImage ("Images/CAT2.png");
   CATimg = loadImage ("Images/CAT2.png");
-  CATimg.resize(width*1/2, height*1069/4000);
-  image(CATimg, width*101/400, height*12/30);
+  CATimg.resize(width*1/4, height*535/4000);
+  image(CATimg, width*151/400, height*12/30);
+  println("It's a tie!");
 
 
     }

@@ -1,13 +1,8 @@
 void easy() {
   drawXO();
-  Boolean winX = winCheckX();
-  if (winX == true){ winDrawX();}
-  Boolean winO = winCheckO();
-  if (winO == true){ winDrawO();}
-    if( winO!=true && winX!=true){
-    TIE();
-  }
-  if(Run != false){
+WinCheck();
+CheckInGame();
+  if(Run != false && InGame == true){
   drawXO(); //don't need to reference clickXO(), always listening
     int AI_Turn = turn % 2;
   if(PlayX==true){
@@ -15,7 +10,7 @@ void easy() {
     randomChoice();
   }
   }
-  if(PlayO==true){
+  if(PlayO==true && InGame == true){
 if (AI_Turn == 0){
     randomChoice();
   }
@@ -25,15 +20,10 @@ if (AI_Turn == 0){
 
 void medium() {
   drawXO();
-  Boolean winX = winCheckX();
-  if (winX == true){ winDrawX();}
-  Boolean winO = winCheckO();
-  if (winO == true){ winDrawO();}
-    if( winO!=true && winX!=true){
-    TIE();
-  }
+WinCheck();
+CheckInGame();
   int AI_Turn = turn % 2;
-  if(Run != false){
+  if(Run != false && InGame == true){
   drawXO();
   if(PlayX==true){
   if(turn == 1){
@@ -75,15 +65,10 @@ void medium() {
 
 void hard() {
     drawXO();
-  Boolean winX = winCheckX();
-  if (winX == true){ winDrawX();}
-  Boolean winO = winCheckO();
-  if (winO == true){ winDrawO();}
-    if( winO!=true && winX!=true){
-    TIE();
-  }
+WinCheck();
+CheckInGame();
  int AI_Turn = turn % 2;
-   if(Run != false){
+   if(Run != false && InGame == true){
   drawXO();
   if(turn == 1){
     HardOT1();

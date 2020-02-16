@@ -24,6 +24,8 @@ void setup(){
 
 void draw(){
   DrawButtons();
+  DrawWinPopup();
+  if(WinOpen !=true){
   if(UnlockedHellPopup != true){
     if(UnlockedHeavenPopup != true){
   if (Run != false){
@@ -31,7 +33,6 @@ void draw(){
  twoPlayerKey();
  }
  LinesDraw();
- DrawWinPopup();
  
    if(SecretsOpen==true){
     SecretsDraw();
@@ -51,6 +52,7 @@ SecretsUnlock();
 if(God == true){
 GodGUIDraw();
 }
+  }
 }
 
 void keyPressed(){

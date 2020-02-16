@@ -295,6 +295,7 @@ if (mouseX >= width*2/4  && mouseX <= width*3/4 && mouseY >= height*0 && mouseY 
   }
   
   void DrawButtons(){
+  DrawWinButtons();
   quitButtonDraw();
   colourButtonDraw();
   resetButtonDraw();
@@ -350,6 +351,9 @@ Boolean PlayO = false;
 Boolean PlayX = false;
 void PlayXButtonMouseClicked(){
   if (mouseX >= width*0  && mouseX <= width*1/4 && mouseY >= height*0 && mouseY <= height*1/16){
+    if(Mode == "player mode"){
+      return;
+    }
     PlayX = true;
     PlayO = false;
     PlayXButtonDraw();
@@ -362,6 +366,10 @@ void PlayOButtonMouseClicked(){
     if(Mode == "two-player"){
       return;
     }
+    if(Mode == "player mode"){
+      return;
+    }
+    InGame = true;
     PlayX = false;
     PlayO = true;
     PlayXButtonDraw();
@@ -439,6 +447,10 @@ xscr = str(Xscr);
   }else{GUI_Setup();}
   }
   }
+  fill(color1);//Resets score
+  rect(width*3/8, height*1/8, width*1/8, height*1/8);
+  textDraw(xscr, Font, height, ink, CENTER, CENTER, width*3/8, height*1/8, width*1/8, height*1/8);
+  textDraw(oscr, Font, height, ink, CENTER, CENTER, width*4/8, height*1/8, width*1/8, height*1/8);
   }
 }
 
@@ -460,6 +472,10 @@ xscr = str(Xscr);
   }else{GUI_Setup();}
   }
   }
+  fill(color1);
+  rect(width*3/8, height*1/8, width*1/8, height*1/8);
+  textDraw(xscr, Font, height, ink, CENTER, CENTER, width*3/8, height*1/8, width*1/8, height*1/8);
+  textDraw(oscr, Font, height, ink, CENTER, CENTER, width*4/8, height*1/8, width*1/8, height*1/8);
   }
 }
 
@@ -481,24 +497,26 @@ xscr = str(Xscr);
   }else{GUI_Setup();}
   }
   }
+  fill(color1);
+  rect(width*3/8, height*1/8, width*1/8, height*1/8);
+  textDraw(xscr, Font, height, ink, CENTER, CENTER, width*3/8, height*1/8, width*1/8, height*1/8);
+  textDraw(oscr, Font, height, ink, CENTER, CENTER, width*4/8, height*1/8, width*1/8, height*1/8);
   }
 }
 
 
 void ButtonsClicked(){
+  WinButtonsClicked();
+  quitButtonMouseClicked();
   if(InGame != true){
-    if(ColourOpen == false){
-      if(SecretsOpen == false){
-  PlayXButtonMouseClicked();
-  PlayOButtonMouseClicked();
+    if(ColourOpen != true){
+      if(SecretsOpen != true){
+        if (WinOpen == false){
   resetButtonMouseClicked();
-    hardButtonMouseClicked();
-  mediumButtonMouseClicked();
-  easyButtonMouseClicked();
+        }
       }
     }
   }
-  quitButtonMouseClicked();
   if(Run != false){
     if(SecretsOpen!=true){
     colourButtonMouseClicked();
@@ -510,6 +528,11 @@ void ButtonsClicked(){
   if(ColourOpen!=true){
     SecretsButtonMouseClicked();
     if(SecretsOpen!=true){
+  PlayXButtonMouseClicked();
+  PlayOButtonMouseClicked();
+  hardButtonMouseClicked();
+  mediumButtonMouseClicked();
+  easyButtonMouseClicked();
   InfoButtonMouseClicked();
   modeButtonMouseClicked();
     }  
