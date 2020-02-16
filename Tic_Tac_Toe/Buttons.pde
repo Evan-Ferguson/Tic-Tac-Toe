@@ -295,7 +295,9 @@ if (mouseX >= width*2/4  && mouseX <= width*3/4 && mouseY >= height*0 && mouseY 
   }
   
   void DrawButtons(){
+    if(UnlockedHellPopup != true && UnlockedHeavenPopup != true){
   DrawWinButtons();
+    }
   quitButtonDraw();
   colourButtonDraw();
   resetButtonDraw();

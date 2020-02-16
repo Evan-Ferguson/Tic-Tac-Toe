@@ -24,10 +24,10 @@ void setup(){
 
 void draw(){
   DrawButtons();
-  DrawWinPopup();
-  if(WinOpen !=true){
   if(UnlockedHellPopup != true){
     if(UnlockedHeavenPopup != true){
+      DrawWinPopup();
+        if(WinOpen !=true){
   if (Run != false){
   TextDraw();
  twoPlayerKey();
