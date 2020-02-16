@@ -1,0 +1,15 @@
+add lines around win popup buttons(possability as it looks fine as is currently)
+
+repurpose reset button to unlockable button
+reset board any time (Not score or mode)
+as is now useless with new win popup
+
+--play as o against hard ai
+
+unlockable custom theme maker
+uses rgb values from dif sliders
+save to extra theme option in theme menue
+will have to redraw sliders using seperate draw function depending on mouse position every frame/resize rectangles
+add colour preview boxes
+
+add undo move button unlocked by being in game for 15min(will scale down for testing)
